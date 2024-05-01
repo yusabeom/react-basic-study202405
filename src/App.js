@@ -2,24 +2,34 @@ import logo from './logo.svg';
 import './App.css';
 import './NoName.js';
 import NoName from './NoName.js';
+import ExpenseItem from './components/ExpenseItem.js';
 function App() {
 
-  const $h2 = <h2>반갑습니다~</h2>
+  //지출 항목 객체 배열
+
+  const expenses = [
+    {
+      title: '바나나',
+      price: 2000,
+      date: new Date(2023, 3, 23),
+    },
+    {
+      title: 'BBQ치킨',
+      price: 20000,
+      date: new Date(2023, 5, 21),
+    },
+    {
+      title: '도미노피자',
+      price: 35000,
+      date: new Date(2023, 7, 4),
+    },
+  ];
 
   return ( //하나의 태그만 리턴할 수 있음 하나의 부모태그로 감싸야 함! (빈태그 가능)
    <> 
-      <NoName />
-     <div className='App'> {/* classNmae으로 클래스 부여 */}
-        <h1>메롱메롱</h1>
-        {$h2}
-     </div>
-     <div className='noname'>
-      <input type='text' />
-        <p>
-          오늘은 5월 1일 수요일 입니다. <br/> {/* 닫는 태그가 필수 */}
-          오후 3시 30분 입니다.
-        </p>
-     </div>
+      <ExpenseItem title={expenses[0].title} price={expenses[0].price} date={expenses[0].date}/>
+      <ExpenseItem title={expenses[1].title} price={expenses[1].price} date={expenses[1].date} />
+      <ExpenseItem title={expenses[2].title} price={expenses[2].price} date={expenses[2].date} />
    </>
   );
 }
