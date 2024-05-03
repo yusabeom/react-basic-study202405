@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import './CourseInput.css';
 import Button from '../UI/Button/Button';
+import './CourseInput.css';
+
 const CourseInput = ({ onAdd }) => {
-  // 입력값 검증 상태변수
-  const [isValid, setIsValid] = useState(true);
   const [enteredText, setEnteredText] = useState('');
+  //입력값 검증 상태변수
+  const [isValid, setIsValid] = useState(true);
 
   const textChangeHandler = (e) => {
-    if (enteredText.trim().length > 0) {
+    if (e.target.value.trim().length > 0) {
       setIsValid(true);
     }
+
     setEnteredText(e.target.value);
   };
 
@@ -27,7 +29,7 @@ const CourseInput = ({ onAdd }) => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className="form-control">
+      <div className={`form-control ${!isValid ? 'invalid' : ''}`}>
         <label>나의 목표</label>
         <input
           style={{
