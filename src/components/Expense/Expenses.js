@@ -3,6 +3,7 @@ import ExpenseItem from './ExpenseItem';
 import './Expenses.css';
 import Card from '../UI/Card';
 import ExpenseFilter from './ExpenseFilter';
+import ExpenseChart from './ExpenseChart';
 
 const Expenses = ({ items }) => {
   // 선택된 연도 상태값 관리
@@ -50,6 +51,7 @@ const Expenses = ({ items }) => {
   return (
     <Card className="expenses">
       <ExpenseFilter onChangeFilter={filterChangeHandler} />
+      <ExpenseChart />
       {expenseContent}
     </Card>
   );
