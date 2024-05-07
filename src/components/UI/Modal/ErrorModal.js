@@ -3,6 +3,7 @@ import styles from './ErrorModal.module.css';
 import Card from '../Card';
 import Button from '../Button/Button';
 import ReactDOM from 'react-dom';
+import Protal from '../Portal/Protal';
 
 const Backdrop = ({ onConfirm }) => {
   return <div className={styles.backdrop} onClick={onConfirm} />;
@@ -18,7 +19,7 @@ const ModalOverlay = ({ title, message, onConfirm }) => {
         <p>{message}</p>
       </div>
       <footer className={styles.actions}>
-        <Button onClick={onConfirm}>Okay</Button>
+        <Button onClick={onConfirm}>확인</Button>
       </footer>
     </Card>
   );
@@ -30,15 +31,13 @@ const ModalOverlay = ({ title, message, onConfirm }) => {
 const ErrorModal = ({ title, message, onConfirm }) => {
   return (
     <>
-      {ReactDOM.createPortal(
+      <Protal destId={'backdrop-root'}>
         <Backdrop onConfirm={onConfirm} />,
-        document.getElementById('backdrop-root'),
-      )}
+      </Protal>
 
-      {ReactDOM.createPortal(
+      <Protal destId={'overlay-root'}>
         <ModalOverlay title={title} message={message} onConfirm={onConfirm} />,
-        document.getElementById('overlay-root'),
-      )}
+      </Protal>
     </>
   );
 };
