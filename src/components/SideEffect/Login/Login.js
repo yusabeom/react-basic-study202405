@@ -18,10 +18,6 @@ import Button from '../../UI/Button/Button';
   return: 관리할 상태값들을 반환
 */
 const emailReducer = (state, action) => {
-  console.log('email reducer called!!!');
-  console.log('state: ', state);
-  console.log('action: ', action);
-
   // dispatch 함수가 전달한 액션 객체의 타입에 따라 변경할 상태값을 반환
   if (action.type === 'USER_INPUT') {
     return {
@@ -74,11 +70,6 @@ const Login = ({ onLogin }) => {
     },
   );
 
-  // 패스워드 입력값을 저장
-  const [enteredPassword, setEnteredPassword] =
-    useState('');
-  // 패스워드 입력이 정상적인지 확인
-  const [passwordIsValid, setPasswordIsValid] = useState();
   // 이메일, 패스워드가 둘 다 동시에 정상적인 상태인지 확인
   const [formIsValid, setFormIsValid] = useState(false);
 
