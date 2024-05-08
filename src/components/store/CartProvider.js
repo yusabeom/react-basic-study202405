@@ -38,7 +38,8 @@ const cartReducer = (state, action) => {
     }
 
     const updatedPrice =
-      state.totalPrice + newCartItem.price * newCartItem.amount;
+      state.totalPrice +
+      newCartItem.price * newCartItem.amount;
 
     // 변경된 상태를 객체 형태로 리턴 -> cartState로 전달됨
     return {
