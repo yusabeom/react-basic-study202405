@@ -58,21 +58,15 @@ const Login = () => {
     return1 - 이메일 관련 상태변수
     return2 - dispatch함수: 상태를 변경할 수 있는 함수
   */
-  const [emailState, dispatchEmail] = useReducer(
-    emailReducer,
-    {
-      value: '',
-      isValid: null,
-    },
-  );
+  const [emailState, dispatchEmail] = useReducer(emailReducer, {
+    value: '',
+    isValid: null,
+  });
 
-  const [pwState, dispatchPw] = useReducer(
-    passwordReducer,
-    {
-      value: '',
-      isValid: null,
-    },
-  );
+  const [pwState, dispatchPw] = useReducer(passwordReducer, {
+    value: '',
+    isValid: null,
+  });
 
   // 이메일, 패스워드가 둘 다 동시에 정상적인 상태인지 확인
   const [formIsValid, setFormIsValid] = useState(false);

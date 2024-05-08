@@ -6,7 +6,7 @@ const Hello = (props) => {
   console.log('props: ', props);
 
   return (
-    <Card className="rectangle">
+    <Card className='rectangle'>
       <div>
         {props.children}
         Hello React!

@@ -36,7 +36,12 @@ const ErrorModal = ({ title, message, onConfirm }) => {
       </Protal>
 
       <Protal destId={'overlay-root'}>
-        <ModalOverlay title={title} message={message} onConfirm={onConfirm} />,
+        <ModalOverlay
+          title={title}
+          message={message}
+          onConfirm={onConfirm}
+        />
+        ,
       </Protal>
     </>
   );
