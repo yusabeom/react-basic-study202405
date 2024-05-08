@@ -1,13 +1,15 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import mealsImage from '../../../assets/meals.jpg';
+import HeaderCartButton from './HeaderCartButton';
 
-const Header = () => {
+const Header = ({ onShowCart }) => {
+  const { header, 'main-image': mainImage } = styles;
   return (
     <>
       <header className={styles.header}>
         <h1>ReactMeals</h1>
-        <button>Cart</button>
+        <HeaderCartButton onShow={onShowCart} />
       </header>
       <div className={styles['main-image']}>
         <img src={mealsImage} alt='Looks very delicious meals' />
