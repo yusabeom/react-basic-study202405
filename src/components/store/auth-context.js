@@ -18,7 +18,8 @@ export const AuthContextProvider = ({ children }) => {
   // 기존에 로그인 한 사람인지 확인하는 코드는 리렌더링 때마다 실행하면 안됨!(한번만 확인하면 됨.)
   useEffect(() => {
     console.log('userEffect 실행!- 최초 단 한번만 실행됨!');
-    const storedLoginFlag = localStorage.getItem('login-flag');
+    const storedLoginFlag =
+      localStorage.getItem('login-flag');
     if (storedLoginFlag === '1') {
       setIsLoggedIn(true);
     }

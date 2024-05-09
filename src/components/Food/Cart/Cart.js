@@ -35,13 +35,17 @@ const Cart = ({ onClose }) => {
       {/* 주문내역(장바구니안의 음식내역) */}
       <ul className={cartItemStyle}>
         {items.map((cartItem) => {
-          return <CartItem key={cartItem.id} cart={cartItem} />;
+          return (
+            <CartItem key={cartItem.id} cart={cartItem} />
+          );
         })}
       </ul>
       <div className={total}>
         <span>주문총액</span>
         <span>
-          {new Intl.NumberFormat('ko-KR').format(totalPrice)}
+          {new Intl.NumberFormat('ko-KR').format(
+            totalPrice,
+          )}
         </span>
       </div>
       <div className={actions}>

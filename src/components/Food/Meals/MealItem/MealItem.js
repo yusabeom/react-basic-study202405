@@ -19,9 +19,15 @@ const MealItem = ({ id, price, description, name }) => {
     addItem(item);
   };
 
-  const { meal, description: desc, price: priceStyle } = styles;
+  const {
+    meal,
+    description: desc,
+    price: priceStyle,
+  } = styles;
 
-  const formatPrice = new Intl.NumberFormat('ko-KR').format(price);
+  const formatPrice = new Intl.NumberFormat('ko-KR').format(
+    price,
+  );
   return (
     <li className={meal}>
       <div>
@@ -30,7 +36,10 @@ const MealItem = ({ id, price, description, name }) => {
         <div className={priceStyle}>{formatPrice}원</div>
       </div>
       <div>
-        <MealItemForm id={id} onAddToCart={addToCartHandler} />
+        <MealItemForm
+          id={id}
+          onAddToCart={addToCartHandler}
+        />
       </div>
     </li>
   );
